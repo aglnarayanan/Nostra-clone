@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Collection Filter</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white">
+
+<!-- Navbar -->
+<nav class="fixed top-0 left-0 w-full bg-white text-black shadow z-40">
+  <div class="mx-auto px-4 py-3 flex justify-between items-center">
+
+    <!-- Logo -->
+    <div class="font-bold text-2xl">Nostra</div>
+
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex space-x-8 font-medium">
+      <li><a href="#" class="hover:text-gray-600">Home</a></li>
+      <li><a href="#newarrival" class="hover:text-gray-600">New Arrival</a></li>
+      <li><a href="#mostwanted" class="hover:text-gray-600">Most Wanted</a></li>
+      <li><a href="collection.html" class="hover:text-gray-600">Collection</a></li> <!-- corrected -->
+      <li><a href="contact.html" class="hover:text-gray-600">Contact Us</a></li>
+    </ul>
+
+    <!-- Mobile Menu Icon -->
+    <div class="md:hidden">
+      <button onclick="toggleMenu()" class="text-2xl font-bold">☰</button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden md:hidden bg-[#2f2c36] text-white px-4 py-6 h-screen w-1/2 fixed top-0 left-0 z-50">
+    <div class="flex justify-end mb-4">
+      <button onclick="toggleMenu()" class="text-xl font-bold">X</button>
+    </div>
+    <ul class="space-y-4 text-lg">
+      <li><a href="#" class="block">Home</a></li>
+      <li><a href="#newarrival" class="block">New Arrival</a></li>
+      <li><a href="#mostwanted" class="block">Most Wanted</a></li>
+      <li><a href="collection.html" class="block">Collection</a></li> <!-- corrected -->
+      <li><a href="contact.html" class="block">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Contact Us Section -->
+<section id="contactus" class="bg-[#2f2c36] min-h-screen flex items-center justify-center py-12">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-3xl">
+  
+      <h2 class="text-2xl font-bold text-center text-[#2f2c36] mb-8">Contact Us</h2>
+  
+      <form class="space-y-6">
+        <!-- Name -->
+        <div>
+          <label for="name" class="block mb-2 text-sm font-medium text-[#2f2c36]">Name:</label>
+          <input type="text" id="name" name="name" required class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+  
+        <!-- Email -->
+        <div>
+          <label for="email" class="block mb-2 text-sm font-medium text-[#2f2c36]">Email:</label>
+          <input type="email" id="email" name="email" required class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+  
+        <!-- Message -->
+        <div>
+          <label for="message" class="block mb-2 text-sm font-medium text-[#2f2c36]">Message:</label>
+          <textarea id="message" name="message" rows="4" required class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+        </div>
+  
+        <!-- Submit Button -->
+        <div class="text-center">
+          <button type="submit" class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition font-semibold">Submit</button>
+        </div>
+      </form>
+  
+    </div>
+  </section>
+  <section class="w-full bg-white py-10 px-6">
+    <div class="max-w-2xl mx-auto text-center">
+      <!-- Heading -->
+      <h1 class="text-4xl font-bold mb-4">Join Our Newsletter</h1>
+      <h2 class="text-lg text-gray-600 mb-8">
+        Sign-up for our email newspaper to get exclusive discounts, updates, and more
+      </h2>
+
+      <!-- Modern Search Box Style -->
+      <div class="mb-6">
+        <div class="relative w-full max-w-md mx-auto">
+          <input type="email" placeholder="Enter your email"
+            class="w-full border border-gray-300 py-3 px-6 text-black focus:outline-none focus:ring-2 focus:ring-black placeholder-gray-400">
+        </div>
+      </div>
+
+      <!-- Subscribe Button -->
+      <div>
+        <button class="bg-black text-white border border-black px-6 py-3  font-semibold hover:bg-gray-100">
+          Subscribe →
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-[#2f2c36] text-white py-12 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col items-start space-y-6">
+      <!-- Title -->
+      <h1 class="text-4xl font-bold">Nostra</h1>
+
+      <!-- Description -->
+      <p class="text-gray-300">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis ullam odio dolor magnam quasi illum
+        repudiandae corporis distinctio voluptate et est, mollitia molestiae ipsam sint, obcaecati neque incidunt alias
+        non.
+      </p>
+
+      <!-- Social Icons -->
+      <div class="flex space-x-6">
+        <a href="#" aria-label="Instagram">
+          <img src="https://img.icons8.com/ios-filled/30/ffffff/instagram-new.png" alt="Instagram" />
+        </a>
+        <a href="#" aria-label="Twitter">
+          <img src="https://img.icons8.com/ios-filled/30/ffffff/twitter.png" alt="Twitter" />
+        </a>
+        <a href="#" aria-label="Facebook">
+          <img src="https://img.icons8.com/ios-filled/30/ffffff/facebook-new.png" alt="Facebook" />
+        </a>
+      </div>
+
+      <!-- Copyright -->
+      <p class="text-gray-400 text-sm mt-8">@2023 Nostra.com</p>
+    </div>
+
+<script src="index.js">
+// Simple toggle mobile menu
+
+</script>
+
+</body>
+</html>

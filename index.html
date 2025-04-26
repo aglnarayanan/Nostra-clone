@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Nostra</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white">
+
+  <!-- Top Promo Bar -->
+  <div id="discountBar"
+    class="fixed top-0 w-screen h-[40px] bg-[#2f2c36] flex justify-center items-center px-4 text-white text-sm z-50">
+    <div class="text-center">
+      <span>Sign up and <strong class="font-bold">GET 20% OFF</strong> for your first order</span>
+    </div>
+    <button onclick="removeBar()" class="absolute right-5 text-white font-bold text-lg">X</button>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="fixed top-[40px] left-0 w-full bg-white text-black shadow z-40">
+    <div class="mx-auto px-4 py-3 flex justify-between items-center">
+
+      <!-- Logo -->
+      <div class="font-bold text-2xl">Nostra</div>
+
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex space-x-8 font-medium">
+        <li><a href="#" class="hover:text-gray-600">Home</a></li>
+        <li><a href="#newarrival" class="hover:text-gray-600">New Arrival</a></li>
+        <li><a href="#mostwanted" class="hover:text-gray-600">Most Wanted</a></li>
+        <li><a href="collection.html" class="hover:text-gray-600">Collection</a></li>
+        <li><a href="contact.html" class="hover:text-gray-600">Contact Us</a></li>
+      </ul>
+
+      <!-- Mobile Menu Icon -->
+      <div class="md:hidden">
+        <button onclick="toggleMenu()" class="text-2xl font-bold">☰</button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu"
+      class="hidden md:hidden bg-[#2f2c36] text-white px-4 py-6 h-screen w-1/2 fixed top-0 left-0 z-50">
+      <div class="flex justify-end mb-4">
+        <button onclick="toggleMenu()" class="text-xl font-bold">X</button>
+      </div>
+      <ul class="space-y-4 text-lg">
+        <li><a href="#" class="block">Home</a></li>
+        <li><a href="#newarrival" class="block">New Arrival</a></li>
+        <li><a href="#mostwanted" class="block">Most Wanted</a></li>
+        <li><a href="collection.html" class="block">Collection</a></li>
+        <li><a href="contact.html" class="block">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Image Slider -->
+  <div class="pt-[120px]"> <!-- 40px discount bar + 70-80px navbar space -->
+    <div class="relative w-full h-[500px] overflow-hidden rounded-lg">
+      <div id="carousel" class="w-full h-full">
+        <img src="images/p1.jpg" class="w-full h-full object-cover" />
+        <img src="images/p2.jpeg"
+          class="w-full h-full object-cover absolute inset-0 transition-opacity duration-700 opacity-0" />
+        <img src="images/p3.jpg"
+          class="w-full h-full object-cover absolute inset-0 transition-opacity duration-700 opacity-0" />
+      </div>
+
+      <!-- Overlay Text -->
+      <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
+        <h1 class="text-4xl font-bold">Level up your style with our</h1>
+        <p class="text-xl mt-2">(summer collection)</p>
+        <button class="mt-4 bg-white text-black px-6 py-2 font-medium flex items-center gap-2 hover:bg-gray-100">
+          Shop Now →
+        </button>
+      </div>
+
+      <!-- Left/Right Arrows -->
+      <button style="font-size: 150px;" onclick="changeSlide(-1)"
+        class="absolute left-2 top-1/2 transform -translate-y-1/2 text-white text-3xl px-4 py-2 rounded-full hover:bg-opacity-50">
+        ‹
+      </button>
+      <button style="font-size: 150px;" onclick="changeSlide(1)"
+        class="absolute right-2 top-1/2 transform -translate-y-1/2 text-white text-5xl px-4 py-2 rounded-full hover:bg-opacity-50">
+        ›
+      </button>
+    </div>
+  </div>
+
+  <!-- Brands Section -->
+  <section class="py-12 px-4 text-center">
+    <h1 class="text-3xl font-bold mb-8">Brands</h1>
+    <div class="flex justify-center items-center gap-20 flex-wrap">
+      <!-- Puma -->
+      <div class="flex flex-col items-center">
+        <img
+          src="https://img.icons8.com/external-tal-revivo-bold-tal-revivo/24/external-puma-a-german-multinational-company-designs-and-manufactures-athletic-and-casual-footwear-apparel-and-accessories-fashion-bold-tal-revivo.png"
+          alt="Puma" class="w-16 h-16 object-contain" />
+        <span class="mt-2 text-sm font-medium">Puma</span>
+      </div>
+      <!-- Adidas -->
+      <div class="flex flex-col items-center">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg" alt="Adidas"
+          class="w-16 h-16 object-contain" />
+        <span class="mt-2 text-sm font-medium">Adidas</span>
+      </div>
+      <!-- Behance -->
+      <div class="flex flex-col items-center">
+        <img src="https://img.icons8.com/ios-filled/50/behance.png" alt="Behance" class="w-16 h-16 object-contain" />
+        <span class="mt-2 text-sm font-medium">Behance</span>
+      </div>
+      <!-- Twitch -->
+      <div class="flex flex-col items-center">
+        <img src="https://img.icons8.com/ios-filled/50/twitch.png" alt="Twitch" class="w-16 h-16 object-contain" />
+        <span class="mt-2 text-sm font-medium">Twitch</span>
+      </div>
+      <!-- Leaf -->
+      <div class="flex flex-col items-center">
+        <img src="https://img.icons8.com/fluency-systems-filled/48/bay-leaf.png" alt="Leaf"
+          class="w-16 h-16 object-contain" />
+        <span class="mt-2 text-sm font-medium">Leaf</span>
+      </div>
+      <!-- Nike -->
+      <div class="flex flex-col items-center">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike"
+          class="w-16 h-16 object-contain" />
+        <span class="mt-2 text-sm font-medium">Nike</span>
+      </div>
+    </div>
+    </div>
+    </div>
+  </section>
+  <section class="py-6 px-6 bg-white ">
+    <!-- Headings -->
+    <h1 class="text-2xl font-bold mb-2">We Provide Best</h1>
+    <h1 class="text-2xl font-bold mb-5">Customer Experiences</h1>
+
+    <!-- 4 Boxes -->
+    <div class="grid md:grid-cols-4 gap-8">
+      <!-- Box 1 -->
+      <div class="flex bg-[#f2f2f2] p-6 rounded-lg items-start">
+        <img src="https://img.icons8.com/ios-filled/50/checked--v1.png" alt="Original Product" class="w-12 h-12 mr-6">
+        <div class="text-left">
+          <h2 class="text-xl font-bold mb-2">Original Products</h2>
+          <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultrices nulla.</p>
+        </div>
+      </div>
+
+      <!-- Box 2 -->
+      <div class="flex bg-[#f2f2f2] p-6 rounded-lg items-start">
+        <img src="https://img.icons8.com/windows/32/smile-beam.png" alt="Satisfaction Guarantee" class="w-12 h-12 mr-6">
+        <div class="text-left">
+          <h2 class="text-xl font-bold mb-2">Satisfaction Guarantee</h2>
+          <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultrices nulla.</p>
+        </div>
+      </div>
+
+      <!-- Box 3 -->
+      <div class="flex bg-[#f2f2f2] p-6 rounded-lg items-start">
+        <img src="https://img.icons8.com/ios-filled/50/new.png" alt="New Arrival Everyday" class="w-12 h-12 mr-6">
+        <div class="text-left">
+          <h2 class="text-xl font-bold mb-2">New Arrival Everyday</h2>
+          <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultrices nulla.</p>
+        </div>
+      </div>
+
+      <!-- Box 4 -->
+      <div class="flex bg-[#f2f2f2] p-6 rounded-lg items-start">
+        <img src="https://img.icons8.com/ios-filled/50/delivery.png" alt="Fast and Free Shipping"
+          class="w-12 h-12 mr-6">
+        <div class="text-left">
+          <h2 class="text-xl font-bold mb-2">Fast and Free Shipping</h2>
+          <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultrices nulla.</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <section id="newarrival" class="py-16 px-6 bg-white">
+    <!-- Section Heading -->
+    <div class="flex items-center justify-between mb-12">
+      <h1 class="text-4xl font-bold text-left">New Arrival</h1>
+    </div>
+
+    <!-- 4 Image Boxes -->
+    <div  class="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <!-- Image Box 1 -->
+      <div class="relative group overflow-hidden rounded-lg w-full h-[250px]">
+        <img src="images/o1.jpg" alt="Product 1" class="w-full h-full object-cover">
+        <div
+          class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+          <button class="bg-white text-black px-4 py-2 font-medium flex items-center gap-2 rounded hover:bg-gray-200">
+            Shop Now →
+          </button>
+        </div>
+      </div>
+
+      <!-- Image Box 2 -->
+      <div class="relative group overflow-hidden rounded-lg w-full h-[250px]">
+        <img src="images/o2.jpg" alt="Product 2" class="w-full h-full object-cover">
+        <div
+          class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+          <button class="bg-white text-black px-4 py-2 font-medium flex items-center gap-2 rounded hover:bg-gray-200">
+            Shop Now →
+          </button>
+        </div>
+      </div>
+
+      <!-- Image Box 3 -->
+      <div class="relative group overflow-hidden rounded-lg w-full h-[250px]">
+        <img src="images/03.jpg" alt="Product 3" class="w-full h-full object-cover">
+        <div
+          class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+          <button class="bg-white text-black px-4 py-2 font-medium flex items-center gap-2 rounded hover:bg-gray-200">
+            Shop Now →
+          </button>
+        </div>
+      </div>
+
+      <!-- Image Box 4 -->
+      <div class="relative group overflow-hidden rounded-lg w-full h-[250px]">
+        <img src="images/o4.jpg" alt="Product 4" class="w-full h-full object-cover">
+        <div
+          class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+          <button class="bg-white text-black px-4 py-2 font-medium flex items-center gap-2 rounded hover:bg-gray-200">
+            Shop Now →
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="mostwanted" class="py-16 px-6 bg-white">
+    <!-- Section Heading -->
+    <div class="mb-8">
+      <h1 class="text-4xl font-bold text-left">Most Wanted</h1>
+    </div>
+
+    <!-- Image Scroll Row -->
+    <div class="flex overflow-x-auto space-x-6 pb-4">
+      <!-- Image 1 -->
+      <div class="relative min-w-[250px] h-[300px] rounded-lg overflow-hidden flex-shrink-0">
+        <img src="images/o5-5.avif" alt="Product 1" class="w-full h-full object-cover">
+        <button class="absolute bottom-2 right-2 bg-white p-2 rounded-full shadow-md">
+          <img width="50" height="50" src="https://img.icons8.com/ios/50/like--v2.png" alt="like--v2"
+            class="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4.318 6.318a4.5 4.5 0 0112.364 0L12 11l-4.682-4.682a4.5 4.5 0 010-6.364z" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Image 2 -->
+      <div class="relative min-w-[250px] h-[300px] rounded-lg overflow-hidden flex-shrink-0">
+        <img src="images/o6-6.avif" alt="Product 2" class="w-full h-full object-cover">
+        <button class="absolute bottom-2 right-2 bg-white p-2 rounded-full shadow-md">
+          <img width="50" height="50" src="https://img.icons8.com/ios/50/like--v2.png" alt="like--v2" class="h-6 w-6
+          text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4.318 6.318a4.5 4.5 0 0112.364 0L12 11l-4.682-4.682a4.5 4.5 0 010-6.364z" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Image 3 -->
+      <div class="relative min-w-[250px] h-[300px] rounded-lg overflow-hidden flex-shrink-0">
+        <img src="images/o8.avif" alt="Product 3" class="w-full h-full object-cover">
+        <button class="absolute bottom-2 right-2 bg-white p-2 rounded-full shadow-md">
+          <img width="50" height="50" src="https://img.icons8.com/ios/50/like--v2.png" alt="like--v2" class="h-6 w-6
+          text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4.318 6.318a4.5 4.5 0 0112.364 0L12 11l-4.682-4.682a4.5 4.5 0 010-6.364z" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Image 4 -->
+      <div class="relative min-w-[250px] h-[300px] rounded-lg overflow-hidden flex-shrink-0">
+        <img src="images/o9.avif" alt="Product 4" class="w-full h-full object-cover">
+        <button class="absolute bottom-2 right-2 bg-white p-2 rounded-full shadow-md">
+          <img width="50" height="50" src="https://img.icons8.com/ios/50/like--v2.png" alt="like--v2" class="h-6 w-6
+          text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4.318 6.318a4.5 4.5 0 0112.364 0L12 11l-4.682-4.682a4.5 4.5 0 010-6.364z" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Image 5 -->
+      <div class="relative min-w-[250px] h-[300px] rounded-lg overflow-hidden flex-shrink-0">
+        <img src="images/o10.avif" alt="Product 5" class="w-full h-full object-cover">
+        <button class="absolute bottom-2 right-2 bg-white p-2 rounded-full shadow-md">
+          <img width="50" height="50" src="https://img.icons8.com/ios/50/like--v2.png" alt="like--v2" class="h-6 w-6
+          text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4.318 6.318a4.5 4.5 0 0112.364 0L12 11l-4.682-4.682a4.5 4.5 0 010-6.364z" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Image 6 -->
+      <div class="relative min-w-[250px] h-[300px] rounded-lg overflow-hidden flex-shrink-0">
+        <img src="images/o11.avif" alt="Product 6" class="w-full h-full object-cover">
+        <button class="absolute bottom-2 right-2 bg-white p-2 rounded-full shadow-md">
+          <img width="50" height="50" src="https://img.icons8.com/ios/50/like--v2.png" alt="like--v2" class="h-6 w-6
+          text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4.318 6.318a4.5 4.5 0 0112.364 0L12 11l-4.682-4.682a4.5 4.5 0 010-6.364z" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Image 7 -->
+      <div class="relative min-w-[250px] h-[300px] rounded-lg overflow-hidden flex-shrink-0">
+        <img src="images/o12.avif" alt="Product 7" class="w-full h-full object-cover">
+        <button class="absolute bottom-2 right-2 bg-white p-2 rounded-full shadow-md">
+          <img width="50" height="50" src="https://img.icons8.com/ios/50/like--v2.png" alt="like--v2" class="h-6 w-6
+          text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4.318 6.318a4.5 4.5 0 0112.364 0L12 11l-4.682-4.682a4.5 4.5 0 010-6.364z" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Image 8 -->
+      <div class="relative min-w-[250px] h-[300px] rounded-lg overflow-hidden flex-shrink-0">
+        <img src="images/o13.avif" alt="Product 8" class="w-full h-full object-cover">
+        <button class="absolute bottom-2 right-2 bg-white p-2 rounded-full shadow-md">
+          <img width="50" height="50" src="https://img.icons8.com/ios/50/like--v2.png" alt="like--v2" class="h-6 w-6
+          text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4.318 6.318a4.5 4.5 0 0112.364 0L12 11l-4.682-4.682a4.5 4.5 0 010-6.364z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="w-full bg-[#2f2c36] py-12 px-6">
+    <div class="flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto">
+      <!-- Left Image -->
+      <div class="w-full md:w-1/2 mb-8 md:mb-0">
+        <img src="images/p3.jpg" alt="Offer Image" class="w-full h-auto rounded-lg">
+      </div>
+
+      <!-- Right Content -->
+      <div class="w-full md:w-1/2 text-white md:pl-12">
+        <h1 class="text-4xl font-bold mb-4">Limited Offer</h1>
+        <h3 class="text-2xl font-medium mb-6">35% off on this for the first 30 customers</h3>
+        <button class="bg-white text-black px-6 py-3 font-semibold rounded flex items-center gap-2 hover:bg-gray-200">
+          Shop Now →
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="w-full bg-white py-10 px-6">
+    <div class="max-w-2xl mx-auto text-center">
+      <!-- Heading -->
+      <h1 class="text-4xl font-bold mb-4">Join Our Newsletter</h1>
+      <h2 class="text-lg text-gray-600 mb-8">
+        Sign-up for our email newspaper to get exclusive discounts, updates, and more
+      </h2>
+
+      <!-- Modern Search Box Style -->
+      <div class="mb-6">
+        <div class="relative w-full max-w-md mx-auto">
+          <input type="email" placeholder="Enter your email"
+            class="w-full border border-gray-300 py-3 px-6 text-black focus:outline-none focus:ring-2 focus:ring-black placeholder-gray-400">
+        </div>
+      </div>
+
+      <!-- Subscribe Button -->
+      <div>
+        <button class="bg-black text-white border border-black px-6 py-3  font-semibold hover:bg-gray-100">
+          Subscribe →
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-[#2f2c36] text-white py-12 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col items-start space-y-6">
+      <!-- Title -->
+      <h1 class="text-4xl font-bold">Nostra</h1>
+
+      <!-- Description -->
+      <p class="text-gray-300">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis ullam odio dolor magnam quasi illum
+        repudiandae corporis distinctio voluptate et est, mollitia molestiae ipsam sint, obcaecati neque incidunt alias
+        non.
+      </p>
+
+      <!-- Social Icons -->
+      <div class="flex space-x-6">
+        <a href="#" aria-label="Instagram">
+          <img src="https://img.icons8.com/ios-filled/30/ffffff/instagram-new.png" alt="Instagram" />
+        </a>
+        <a href="#" aria-label="Twitter">
+          <img src="https://img.icons8.com/ios-filled/30/ffffff/twitter.png" alt="Twitter" />
+        </a>
+        <a href="#" aria-label="Facebook">
+          <img src="https://img.icons8.com/ios-filled/30/ffffff/facebook-new.png" alt="Facebook" />
+        </a>
+      </div>
+
+      <!-- Copyright -->
+      <p class="text-gray-400 text-sm mt-8">@2023 Nostra.com</p>
+    </div>
+  </footer>
+  <script src="index.js"></script>
+
+</body>
+
+</html>

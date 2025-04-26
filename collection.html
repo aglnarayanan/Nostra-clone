@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Collection Filter</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white">
+
+<!-- Navbar -->
+<nav class="fixed top-0 left-0 w-full bg-white text-black shadow z-40">
+  <div class="mx-auto px-4 py-3 flex justify-between items-center">
+
+    <!-- Logo -->
+    <div class="font-bold text-2xl">Nostra</div>
+
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex space-x-8 font-medium">
+      <li><a href="index.html" class="hover:text-gray-600">Home</a></li>
+      <li><a href="#newarrival" class="hover:text-gray-600">New Arrival</a></li>
+      <li><a href="#mostwanted" class="hover:text-gray-600">Most Wanted</a></li>
+      <li><a href="collection.html" class="hover:text-gray-600">Collection</a></li> <!-- corrected -->
+      <li><a href="contact.html" class="hover:text-gray-600">Contact Us</a></li>
+    </ul>
+
+    <!-- Mobile Menu Icon -->
+    <div class="md:hidden">
+      <button onclick="toggleMenu()" class="text-2xl font-bold">☰</button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden md:hidden bg-[#2f2c36] text-white px-4 py-6 h-screen w-1/2 fixed top-0 left-0 z-50">
+    <div class="flex justify-end mb-4">
+      <button onclick="toggleMenu()" class="text-xl font-bold">X</button>
+    </div>
+    <ul class="space-y-4 text-lg">
+      <li><a href="index.html" class="block">Home</a></li>
+      <li><a href="#newarrival" class="block">New Arrival</a></li>
+      <li><a href="#mostwanted" class="block">Most Wanted</a></li>
+      <li><a href="collection.html" class="block">Collection</a></li> <!-- corrected -->
+      <li><a href="contact.html" class="block">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Collection Section -->
+<section id="collection" class="pt-28 py-12 px-6"> <!-- added id and padding-top -->
+  <div class="flex flex-col md:flex-row gap-8 relative">
+    
+    <!-- Filter Sidebar -->
+    <div class="w-full md:w-1/4">
+      <h2 class="font-bold text-lg mb-4">Arrival</h2>
+      <div class="flex flex-col mb-6">
+        <label><input type="checkbox" class="arrival-checkbox mr-2" value="New"> New</label>
+        <label><input type="checkbox" class="arrival-checkbox mr-2" value="Old"> Old</label>
+      </div>
+
+      <h2 class="font-bold text-lg mb-4">Color</h2>
+      <div class="flex flex-col mb-6">
+        <label><input type="checkbox" class="color-checkbox mr-2" value="Red"> Red</label>
+        <label><input type="checkbox" class="color-checkbox mr-2" value="Blue"> Blue</label>
+        <label><input type="checkbox" class="color-checkbox mr-2" value="White"> White</label>
+        <label><input type="checkbox" class="color-checkbox mr-2" value="Green"> Green</label>
+      </div>
+
+      <h2 class="font-bold text-lg mb-4">Location</h2>
+      <div class="flex flex-col">
+        <label><input type="checkbox" class="location-checkbox mr-2" value="Summer"> Summer</label>
+        <label><input type="checkbox" class="location-checkbox mr-2" value="Party"> Party</label>
+        <label><input type="checkbox" class="location-checkbox mr-2" value="Beach"> Beach</label>
+      </div>
+    </div>
+
+    <!-- Vertical Line Center -->
+    <div class="hidden md:block w-px bg-black absolute left-1/4 top-0 h-full"></div>
+
+    <!-- Main Content -->
+    <div class="w-full md:w-3/4 pl-8">
+      
+      <!-- Search Box -->
+      <div class="relative mb-6">
+        <input id="searchInput" type="text" placeholder="Search collections..." class="w-full p-3 border border-gray-300 rounded-lg pl-10">
+        <span class="absolute left-3 top-3 text-gray-500">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M16 10a6 6 0 11-12 0 6 6 0 0112 0z" />
+          </svg>
+        </span>
+      </div>
+
+      <!-- Image Grid (3 Columns) -->
+      <div id="collectionContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <!-- Images dynamically added by JavaScript -->
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="w-full bg-white py-10 px-6">
+    <div class="max-w-2xl mx-auto text-center">
+      <!-- Heading -->
+      <h1 class="text-4xl font-bold mb-4">Join Our Newsletter</h1>
+      <h2 class="text-lg text-gray-600 mb-8">
+        Sign-up for our email newspaper to get exclusive discounts, updates, and more
+      </h2>
+
+      <!-- Modern Search Box Style -->
+      <div class="mb-6">
+        <div class="relative w-full max-w-md mx-auto">
+          <input type="email" placeholder="Enter your email"
+            class="w-full border border-gray-300 py-3 px-6 text-black focus:outline-none focus:ring-2 focus:ring-black placeholder-gray-400">
+        </div>
+      </div>
+
+      <!-- Subscribe Button -->
+      <div>
+        <button class="bg-black text-white border border-black px-6 py-3  font-semibold hover:bg-gray-100">
+          Subscribe →
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-[#2f2c36] text-white py-12 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col items-start space-y-6">
+      <!-- Title -->
+      <h1 class="text-4xl font-bold">Nostra</h1>
+
+      <!-- Description -->
+      <p class="text-gray-300">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis ullam odio dolor magnam quasi illum
+        repudiandae corporis distinctio voluptate et est, mollitia molestiae ipsam sint, obcaecati neque incidunt alias
+        non.
+      </p>
+
+      <!-- Social Icons -->
+      <div class="flex space-x-6">
+        <a href="#" aria-label="Instagram">
+          <img src="https://img.icons8.com/ios-filled/30/ffffff/instagram-new.png" alt="Instagram" />
+        </a>
+        <a href="#" aria-label="Twitter">
+          <img src="https://img.icons8.com/ios-filled/30/ffffff/twitter.png" alt="Twitter" />
+        </a>
+        <a href="#" aria-label="Facebook">
+          <img src="https://img.icons8.com/ios-filled/30/ffffff/facebook-new.png" alt="Facebook" />
+        </a>
+      </div>
+
+      <!-- Copyright -->
+      <p class="text-gray-400 text-sm mt-8">@2023 Nostra.com</p>
+    </div>
+
+<script src="index.js">
+// Simple toggle mobile menu
+
+</script>
+
+</body>
+</html>
